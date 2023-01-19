@@ -10,7 +10,6 @@ Det finns minst 3 typer av verk (ex bok, cd-skiva, film, spel) som kan sparas i 
 
 - De ärver från en "huvudklass" med delade värden, t.ex:
 
-- id (kanske bör vara unikt och läggs till i koden)
 - titel
 - utgivningsår
 
