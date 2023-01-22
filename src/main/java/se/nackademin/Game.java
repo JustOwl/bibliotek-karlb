@@ -1,8 +1,8 @@
 package se.nackademin;
 
 public class Game implements Items{
-    private int releaseYear;
     private String titel;
+    private int releaseYear;
     private int howLongToBeat;
 
     @Override

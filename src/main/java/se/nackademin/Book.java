@@ -1,9 +1,10 @@
 package se.nackademin;
 
 public class Book implements Items {
-    private int pageCount;
-    private int releaseYear;
     private String titel;
+    private int releaseYear;
+    private int pageCount;
+    
     
     @Override
     public boolean setTitel(String newTitel) {
