@@ -43,7 +43,7 @@ public class Music implements Items{
                 return false;
             }
             else{
-                //From Stackoverflow at https://stackoverflow.com/a/34367413
+                //Source Stackoverflow at https://stackoverflow.com/a/34367413
                 int y = (int) Math.floor(newMinute % 1d * 100);
 
                 if(y >= 60){
