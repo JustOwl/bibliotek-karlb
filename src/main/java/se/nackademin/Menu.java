@@ -6,24 +6,32 @@ import java.util.Scanner;
 import java.io.IOException;
 
 public class Menu {
-    public List<Game>  gameList  = new ArrayList<>();
-    public List<Book>  bookList  = new ArrayList<>();
-    public List<Music> musicList = new ArrayList<>();
+    private List<Game>  gameList  = new ArrayList<>();
+    private List<Book>  bookList  = new ArrayList<>();
+    private List<Music> musicList = new ArrayList<>();
     public static void main(String[] args) throws Exception {
         try (Scanner sc = new Scanner(System.in).useDelimiter("\r?\n|\r")) {
             menu(sc);
         }
-
     }
 
     static void menu(Scanner sc) throws IOException, ClassNotFoundException {
         Menu menu = new Menu();
+        System.out.println("Do you wish to load all saved data? [Y/N]");
+        if(sc.hasNextLine()){
+            String input = String.valueOf(sc.nextLine());
+            if(input.equalsIgnoreCase("Y")){
+                menu.loadSavedFiles();
+            }
+        }
         while (true) {
-            System.out.println("1.Write data to file" );
+            System.out.println("1.Write data to new file" );
             System.out.println("2.Read data from file");
-            System.out.println("3.List all saved data");
-            System.out.println("4.Enter new entry manually");
-            System.out.println("Enter a int 1-4 or 'exit' to quit: ");
+            System.out.println("3.Export data to file");
+            System.out.println("4.List all saved data");
+            System.out.println("5.Enter new entry manually");
+            System.out.println("6.Save all changes to the catalog");
+            System.out.println("Enter a int 1-6 or 'exit' to quit: ");
 
             if (sc.hasNextInt()) {
                 int choice = Integer.valueOf(sc.nextLine());
@@ -36,33 +44,153 @@ public class Menu {
         }
     }
 
+    public void loadSavedFiles(){
+        ArrayList<String> gameValues  = new ArrayList<>();
+        ArrayList<String> bookValues  = new ArrayList<>();
+        ArrayList<String> musicValues = new ArrayList<>();
+
+        gameValues = CSVHandler.CSVReader("data/games.csv");
+        bookValues = CSVHandler.CSVReader("data/books.csv");
+        musicValues = CSVHandler.CSVReader("data/music.csv");
+        SaveSwitch("game" , gameValues);
+        SaveSwitch("book" , bookValues);
+        SaveSwitch("music", musicValues);
+    }
+
+    public void writeCurrectItemsToNewFile(String fileName, Scanner sc){
+        System.out.println("Input type of object");
+        if(sc.hasNextLine()){
+            String type = String.valueOf(sc.nextLine());
+            writeSwitch(type, fileName);
+        }
+    }
+
+    public void writeSwitch(String type, String fileName){
+        List<String[]> valueToSave = new ArrayList<String[]>();
+        switch (type) {
+            case "game":
+                String[] gameHeader = { "titel", "releaseyear", "howlongtobeat" };
+                valueToSave = GetGameValues();
+                CSVHandler.CSVWriter(fileName, valueToSave,gameHeader);
+                break;
+            case "book":
+                String[] bookHeader = { "titel", "releaseyear", "pagecount" };
+                valueToSave = GetBookValues();
+                CSVHandler.CSVWriter(fileName, valueToSave, bookHeader);
+                break;
+            case "music":
+                String[] musicHeader = { "titel", "releaseyear", "minutes" };
+                valueToSave = GetMusicValues();
+                CSVHandler.CSVWriter(fileName, valueToSave, musicHeader);
+                break;
+            default:
+            System.out.println("Invalid input type");
+                break;
+        }
+    }
+
     public void menu_choices(int i, Scanner sc) throws IOException, ClassNotFoundException {
         switch (i) {
             case 1:
-                System.out.println("Write data to file");
-                //TODO Call the CSV Writer
+                System.out.println("Input name of the new file");
+                if(sc.hasNextLine()){
+                    String input = String.valueOf(sc.nextLine());
+                    this.writeCurrectItemsToNewFile(input+".csv", sc);
+                }
                 break;
             case 2:
                 System.out.println("Read data from file");
                 this.ReadFromFile(sc);
                 break;
             case 3:
-                System.out.println("List all items");
-                for (Game game : this.gameList) {
-                    System.out.println("Game: "+game.getTitle());
-                }
-                //TODO Print all data from files
+                System.out.println("Export data to file");
                 break;
             case 4:
+                System.out.println("List all items");
+                this.PrintAllValues(sc);
+                break;
+            case 5:
                 System.out.println("Manually enter new entry");
                 this.ManuallyEntry(sc);
+                break;
+            case 6:
+                System.out.println("Save all changes to the catalog");
                 break;
             default:
                 System.out.println("Unknown selection");
         }
     }
 
-    public void ManuallyEntry(Scanner sc) {
+    public void SaveToCatalog(){
+        //Game
+        writeSwitch("game", "data/games.csv");
+        //Book
+        writeSwitch("book", "data/books.csv");
+        //Music
+        writeSwitch("music", "data/music.csv");
+    }
+
+    public void PrintAllValues(Scanner sc){
+        System.out.println("1.List all Games");
+        System.out.println("2.List all Books");
+        System.out.println("3.List all Music");
+        System.out.println("4.List all items");
+        if(sc.hasNextLine()){
+            int type = Integer.valueOf(sc.nextLine());
+            switch (type) {
+                case 1:
+                    printGames();
+                    break;
+                case 2:
+                    printBooks();
+                    break;
+                case 3:
+                    printMusic();
+                    break;
+                case 4:
+                    printGames();
+                    printBooks();
+                    printMusic();
+                default:
+                    System.out.println("Invalid input");
+                    break;
+            }
+        }
+    }
+
+    public void printGames(){
+        System.out.println("All Games:");
+        for (Game game : this.gameList) {
+            System.out.println("Titel: "+game.getTitle()
+                            +". Release Year: "+game.getReleaseYear()
+                            +". How Long To Beat: "+game.getHowLongToBeat());
+        }
+    }
+
+    public void printBooks(){
+        System.out.println("All Books:");
+        for (Book book : bookList) {
+            System.out.println("Titel: "+book.getTitle()
+                            +". Release Year: "+book.getReleaseYear()
+                            +". Page Count: "+book.getPageCount());
+        }
+    }
+
+    public void printMusic(){
+        System.out.println("All Music");
+        for (Music music : musicList) {
+            System.out.println("Titel: "+music.getTitle()
+                            +". Release Year: "+music.getReleaseYear()
+                            +". Minutes: "+music.getMinutes());
+        }
+    }
+
+    public ArrayList<String> ManuallyEntry(Scanner sc) {
+        String titleString  = "";
+        int releaseyearInt  = 0;
+        int howlongtobeatInt= 0;
+        int pagecountInt    = 0;
+        float minutesFloat  = 0f;
         ArrayList<String> newValues = new ArrayList<>();
         System.out.println("What type of item do you wish to add?");
         System.out.println("1.Game");
@@ -70,29 +198,44 @@ public class Menu {
         System.out.println("3.Music");
         if (sc.hasNextInt()) {
             int choice = Integer.valueOf(sc.nextLine());
+            if (sc.hasNextLine()){
+                System.out.println("Title:");
+                titleString = String.valueOf(sc.nextLine());
+            }
+            if(sc.hasNextLine()){
+                System.out.println("Release Year:");
+                releaseyearInt = Integer.valueOf(sc.nextInt());
+            }
             switch (choice) {
-                case 1:
-                    System.out.println("Formatting should be:[String, Int, Int]");
-                    System.out.println("Input [title, releaseyear, howlongtobeat]");
-                    newValues.add(sc.nextLine());
+                case 1: //Game
+                    if (sc.hasNextLine()){
+                        System.out.println("How Long To Beat:");
+                        howlongtobeatInt = Integer.valueOf(sc.nextLine());
+                    }
+                    newValues.add(titleString+","+releaseyearInt+","+howlongtobeatInt);
                     this.SaveSwitch("game", newValues);
-                    break;
-                case 2:
-                    System.out.println("Formatting should be:[String, Int, Int]");
-                    System.out.println("Input [title, releaseyear, pagecount]");
-                    newValues.add(sc.nextLine());
+                    return newValues;
+                case 2: //Book
+                    if (sc.hasNextLine()){
+                        System.out.println("Page Count:");
+                        pagecountInt = Integer.valueOf(sc.nextLine());
+                    }
+                    newValues.add(titleString+","+releaseyearInt+","+pagecountInt);
                     this.SaveSwitch("book", newValues);
-                    break;
-                case 3:
-                    System.out.println("Formatting should be:[String, Int, Float]");
-                    System.out.println("Input [title, releaseyear, minutes]");
-                    newValues.add(sc.nextLine());
+                    return newValues;
+                case 3: //Music
+                    if (sc.hasNextLine()){
+                        System.out.println("Minutes:");
+                        minutesFloat = Float.valueOf(sc.nextLine());
+                    }
+                    newValues.add(titleString+","+releaseyearInt+","+minutesFloat);
                     this.SaveSwitch("music", newValues);
-                    break;
+                    return newValues;
                 default:
-                    break;
+                    return newValues;
             }
         }
+        return newValues;
     }
 
     public void ReadFromFile(Scanner sc){
@@ -106,7 +249,6 @@ public class Menu {
                     System.out.println(i);
                 }
             }
-            //Input == Y but it still just exits??
             System.out.println("Would you like to save this file to the program? [Y/N]: ");
             if(sc.hasNextLine()){
                 String input = String.valueOf(sc.nextLine());
@@ -138,12 +280,16 @@ public class Menu {
             case "music":
                 this.SaveMusic(values);
                 break;
-
             default:
                 System.out.println("Sorry that is not a valid input");
                 break;
         }
     }
+
+    /*
+     * These 3 methods are used to format the values read from
+     * the files and generate objects of the correct type for later use
+     */
 
     public List<Game> SaveGames(ArrayList<String> values){
         int indexStart;
@@ -203,5 +349,39 @@ public class Menu {
             this.musicList.add(newMusic);
         }
         return this.musicList;
+    }
+
+    /*
+     * These 3 methods are used for formatting the values
+     * so that they are easier to save to .csv
+     */
+    public List<String[]> GetGameValues(){
+        List<String[]> values = new ArrayList<String[]>();
+        for (Game game : this.gameList) {
+            values.add(new String[]{(game.getTitle())
+                      ,String.valueOf(game.getReleaseYear())
+                      ,String.valueOf(game.getHowLongToBeat())});
+        }
+        return values;
+    }
+
+    public List<String[]> GetBookValues(){
+        List<String[]> values = new ArrayList<String[]>();
+        for (Book book : this.bookList) {
+            values.add(new String[]{book.getTitle()
+                    ,String.valueOf(book.getReleaseYear())
+                    ,String.valueOf(book.getPageCount())});
+        }
+        return values;
+    }
+
+    public List<String[]> GetMusicValues(){
+        List<String[]> values = new ArrayList<String[]>();
+        for (Music music : this.musicList) {
+            values.add(new String[]{music.getTitle()
+                    ,String.valueOf(music.getReleaseYear())
+                    ,String.valueOf(music.getMinutes())});
+        }
+        return values;
     }
 }
