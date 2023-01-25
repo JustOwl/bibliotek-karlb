@@ -111,7 +111,7 @@ public class Menu {
                 break;
             case 5:
                 System.out.println("Manually enter new entry");
-                this.ManuallyEntry(sc);
+                this.ManualEntry(sc);
                 break;
             case 6:
                 System.out.println("Save all changes to the catalog");
@@ -185,7 +185,7 @@ public class Menu {
         }
     }
 
-    public ArrayList<String> ManuallyEntry(Scanner sc) {
+    public ArrayList<String> ManualEntry(Scanner sc) {
         String titleString  = "";
         int releaseyearInt  = 0;
         int howlongtobeatInt= 0;
