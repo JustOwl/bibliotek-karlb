@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="se.nackademin.BookTest" time="0.035" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="se.nackademin.BookTest" time="0.127" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="D:\2.Programming\YH\Java\bibliotek-karlb\target\test-classes;D:\2.Programming\YH\Java\bibliotek-karlb\target\classes;C:\Users\Kalle\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Kalle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.class.path" value="c:\Skola\Java\bibliotek-karlb\target\test-classes;c:\Skola\Java\bibliotek-karlb\target\classes;C:\Users\Kalle\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Kalle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Kalle\.m2\repository\com\opencsv\opencsv\4.1\opencsv-4.1.jar;C:\Users\Kalle\.m2\repository\org\apache\commons\commons-lang3\3.5\commons-lang3-3.5.jar;C:\Users\Kalle\.m2\repository\org\apache\commons\commons-text\1.1\commons-text-1.1.jar;C:\Users\Kalle\.m2\repository\commons-beanutils\commons-beanutils\1.9.3\commons-beanutils-1.9.3.jar;C:\Users\Kalle\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Kalle\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="user.timezone" value="Europe/Stockholm"/>
-    <property name="user.country.format" value="SE"/>
-    <property name="os.name" value="Windows 10"/>
+    <property name="os.name" value="Windows 11"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="user.country" value="US"/>
+    <property name="user.country" value="SE"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17.0.5\bin"/>
-    <property name="sun.java.command" value="C:\Users\Kalle\AppData\Local\Temp\surefire12017563246658203793\surefirebooter13216056445990387551.jar C:\Users\Kalle\AppData\Local\Temp\surefire12017563246658203793 2023-01-19T13-52-28_730-jvmRun1 surefire6735811043460090049tmp surefire_04120641913839113014tmp"/>
+    <property name="sun.java.command" value="C:\Users\Kalle\AppData\Local\Temp\surefire13052308829198741187\surefirebooter8040400888447363760.jar C:\Users\Kalle\AppData\Local\Temp\surefire13052308829198741187 2023-01-27T12-40-55_244-jvmRun1 surefire10961017995885592221tmp surefire_010316605604500561909tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="D:\2.Programming\YH\Java\bibliotek-karlb\target\test-classes;D:\2.Programming\YH\Java\bibliotek-karlb\target\classes;C:\Users\Kalle\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Kalle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="surefire.test.class.path" value="c:\Skola\Java\bibliotek-karlb\target\test-classes;c:\Skola\Java\bibliotek-karlb\target\classes;C:\Users\Kalle\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Kalle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Kalle\.m2\repository\com\opencsv\opencsv\4.1\opencsv-4.1.jar;C:\Users\Kalle\.m2\repository\org\apache\commons\commons-lang3\3.5\commons-lang3-3.5.jar;C:\Users\Kalle\.m2\repository\org\apache\commons\commons-text\1.1\commons-text-1.1.jar;C:\Users\Kalle\.m2\repository\commons-beanutils\commons-beanutils\1.9.3\commons-beanutils-1.9.3.jar;C:\Users\Kalle\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Kalle\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Kalle"/>
-    <property name="user.language" value="en"/>
+    <property name="user.language" value="sv"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.version.date" value="2022-10-18"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-17.0.5"/>
     <property name="file.separator" value="\"/>
-    <property name="basedir" value="D:\2.Programming\YH\Java\bibliotek-karlb"/>
+    <property name="basedir" value="c:\Skola\Java\bibliotek-karlb"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Kalle\AppData\Local\Temp\surefire12017563246658203793\surefirebooter13216056445990387551.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Kalle\AppData\Local\Temp\surefire13052308829198741187\surefirebooter8040400888447363760.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.5+9-LTS-191"/>
@@ -45,24 +44,23 @@
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\Kalle\AppData\Local\Temp\"/>
     <property name="java.version" value="17.0.5"/>
-    <property name="user.dir" value="D:\2.Programming\YH\Java\bibliotek-karlb"/>
+    <property name="user.dir" value="c:\Skola\Java\bibliotek-karlb"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.language.format" value="sv"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-17.0.5\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\libnvvp;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\lib\x64;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\extras\CUPTI\libx64\;C:\Program Files\Java\jdk1.8.0_251\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Kubernetes\Minikube;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\apache-maven-3.8.7\bin;C:\Users\Kalle\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\Kalle\AppData\Local\Programs\Python\Python310\;C:\Users\Kalle\AppData\Local\Microsoft\WindowsApps;C:\Users\Kalle\AppData\Local\GitHubDesktop\bin;C:\Users\Kalle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Kalle\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.1.1\bin;;C:\Users\Kalle\AppData\Local\Microsoft\WindowsApps;C:\Users\Kalle\AppData\Local\MaxTo\;C:\Users\Kalle\.dotnet\tools;C:\Users\Kalle\AppData\Local\Programs\Azure Data Studio\bin;C:\Program Files\apache-maven-3.8.7\bin;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-17.0.5\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Kubernetes\Minikube;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Users\Kalle\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\Kalle\AppData\Local\Programs\Python\Python310\;C:\Users\Kalle\AppData\Local\Microsoft\WindowsApps;C:\Users\Kalle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Kalle\AppData\Local\GitHubDesktop\bin;C:\Users\Kalle\AppData\Local\Programs\Azure Data Studio\bin;C:\Program Files\Java\jdk-17.0.5;C:\Program Files\apache-maven-3.8.7\bin;;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="java.vm.version" value="17.0.5+9-LTS-191"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="shouldReturnTrue_PageCount" classname="se.nackademin.BookTest" time="0.002"/>
+  <testcase name="shouldReturnTrue_PageCount" classname="se.nackademin.BookTest" time="0.004"/>
   <testcase name="shouldReturnTrue_ReleaseYear" classname="se.nackademin.BookTest" time="0"/>
   <testcase name="shouldReturnFalse_ReleaseYear" classname="se.nackademin.BookTest" time="0"/>
   <testcase name="shouldReturnTrue_Title" classname="se.nackademin.BookTest" time="0"/>
   <testcase name="shouldReturnFalseIfInputLenghtIsZero_Title" classname="se.nackademin.BookTest" time="0"/>
   <testcase name="shouldReturnFalse_PageCount" classname="se.nackademin.BookTest" time="0"/>
-  <testcase name="shouldReturnFalseIfInputIsNull_Title" classname="se.nackademin.BookTest" time="0.011"/>
+  <testcase name="shouldReturnFalseIfInputIsNull_Title" classname="se.nackademin.BookTest" time="0.028"/>
 </testsuite>

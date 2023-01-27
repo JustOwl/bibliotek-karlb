@@ -25,13 +25,12 @@ public class Menu {
             }
         }
         while (true) {
-            System.out.println("1.Write data to new file" );
+            System.out.println("1.Export data to new file" );
             System.out.println("2.Read data from file");
-            System.out.println("3.Export data to file");
-            System.out.println("4.List all saved data");
-            System.out.println("5.Enter new entry manually");
-            System.out.println("6.Save all changes to the catalog");
-            System.out.println("Enter a int 1-6 or 'exit' to quit: ");
+            System.out.println("3.List all saved data");
+            System.out.println("4.Enter new entry manually");
+            System.out.println("5.Save all changes to the catalog");
+            System.out.println("Enter a int 1-5 or 'exit' to quit: ");
 
             if (sc.hasNextInt()) {
                 int choice = Integer.valueOf(sc.nextLine());
@@ -103,18 +102,16 @@ public class Menu {
                 this.ReadFromFile(sc);
                 break;
             case 3:
-                System.out.println("Export data to file");
-                break;
-            case 4:
                 System.out.println("List all items");
                 this.PrintAllValues(sc);
                 break;
-            case 5:
+            case 4:
                 System.out.println("Manually enter new entry");
                 this.ManualEntry(sc);
                 break;
-            case 6:
+            case 5:
                 System.out.println("Save all changes to the catalog");
+                this.SaveToCatalog();
                 break;
             default:
                 System.out.println("Unknown selection");
@@ -198,18 +195,18 @@ public class Menu {
         System.out.println("3.Music");
         if (sc.hasNextInt()) {
             int choice = Integer.valueOf(sc.nextLine());
+            System.out.println("Title:");
             if (sc.hasNextLine()){
-                System.out.println("Title:");
                 titleString = String.valueOf(sc.nextLine());
             }
+            System.out.println("Release Year:");
             if(sc.hasNextLine()){
-                System.out.println("Release Year:");
-                releaseyearInt = Integer.valueOf(sc.nextInt());
+                releaseyearInt = Integer.valueOf(sc.nextLine());
             }
             switch (choice) {
                 case 1: //Game
+                    System.out.println("How Long To Beat:");
                     if (sc.hasNextLine()){
-                        System.out.println("How Long To Beat:");
                         howlongtobeatInt = Integer.valueOf(sc.nextLine());
                     }
                     newValues.add(titleString+","+releaseyearInt+","+howlongtobeatInt);
